@@ -4,6 +4,8 @@ var server = require('http').createServer(app);
 var bodyParser = require('body-parser');
 var expressLayouts = require('express-ejs-layouts');
 
+var users = require('./modules/users.js');
+
 app.set('view engine', 'ejs');
 app.set('layout', 'layout');
 app.set('view engine', 'ejs');
@@ -16,6 +18,15 @@ app.use(bodyParser.urlencoded({
 
 app.get('/', function(request, response){
   response.render('index', {layout:'layout'});
+});
+
+app.get('/users/:username', function(request, response){
+  var username = request.params.username;
+  users.forEach(function(user) {
+    if (user.login === username) {
+      response.json(user);
+    }
+  });
 });
 
 app.post('/', function(request, response){
