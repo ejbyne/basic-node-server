@@ -8,7 +8,7 @@ describe('homepage', function(){
 
   it('hello worlds', function(){
     casper.then(function(){
-      expect("body").to.have.text("Hello world");
+      expect("body").to.include.text("Hello world");
     });
   });
 
