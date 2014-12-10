@@ -14,7 +14,6 @@ describe('homepage', function(){
 
   it('asks for a name', function(){
     casper.then(function(){
-      expect("body").to.have.form;
       expect("form").to.have.text(/Please enter your name:/);
     });
   });
@@ -27,5 +26,5 @@ describe('homepage', function(){
       });
     });
   });
-  
+
 });
