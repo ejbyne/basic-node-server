@@ -21,12 +21,8 @@ app.get('/', function(request, response){
 });
 
 app.get('/users/:username', function(request, response){
-  var username = request.params.username;
-  users.forEach(function(user) {
-    if (user.login === username) {
-      response.json(user);
-    }
-  });
+  var login = request.params.username;
+  response.json(users[login]);
 });
 
 app.post('/', function(request, response){
