@@ -21,7 +21,7 @@ describe('homepage', function(){
   it('will show a name once entered', function() {
     casper.then(function() {
       this.fill("form[action='/']", { name: 'Ed' }, true);
-      this.click(".submit", function() {
+      this.click("input[value='Say hi']", function() {
         expect("body").to.have.text(/Hello Ed/);
       });
     });
