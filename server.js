@@ -12,7 +12,9 @@ app.use(expressLayouts);
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 app.get('/', function(request, response){
   response.render('index', {layout:'layout'});
