@@ -35,6 +35,4 @@ module.exports = function(grunt){
 
   grunt.registerTask('default', ['express:test', 'mocha_casperjs', 'jshint']);
 
-
-
 };

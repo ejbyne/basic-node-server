@@ -1,6 +1,3 @@
-// var chai = require('chai');
-// var expect = chai.expect;
-
 describe('homepage', function(){
   before(function(){
     casper.start('http://localhost:3000/');

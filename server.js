@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/', function(request, response){
-  response.render('index', {layout:'layout'});
+  response.render('index', { layout: 'layout' });
 });
 
 app.get('/users/:username', function(request, response){
@@ -27,7 +27,7 @@ app.get('/users/:username', function(request, response){
 
 app.post('/', function(request, response){
   var name = request.param('name');
-  response.render('welcome',{name:name, layout:'layout'});
+  response.render('welcome',{ name: name, layout: 'layout' });
 });
 
 var port = process.env.PORT || 3000;
